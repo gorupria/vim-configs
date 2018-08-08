@@ -33,6 +33,9 @@ Plugin 'file:///home/gmarik/path/to/plugin'
 Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'cohama/lexima.vim'
+Plugin 'tpope/vim-sleuth.git'
+Plugin 'Yggdroot/indentLine'
+Plugin 'tpope/vim-commentary'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -77,6 +80,7 @@ set lines=50 columns=1000
 
 syntax on
 
+set ma                                " Set modifiable on
 set autoread                          " Auto reload changed files
 set wildmenu                          " Tab autocomplete in command mode
 set backspace=indent,eol,start        " http://vi.stackexchange.com/a/2163
@@ -98,6 +102,13 @@ set ignorecase smartcase              " Search queries intelligently set case
 set incsearch                         " Show search results as you type
 set timeoutlen=1000 ttimeoutlen=0     " Remove timeout when hitting escape
 set showcmd " Show size of visual selection
+filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
 
 " Persistent undo
 set undodir=~/.vim/undo/
